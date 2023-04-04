@@ -20,13 +20,13 @@ let timer = document.getElementById('timer');
 console.log(timer);
 
 let hours = document.createElement('span');
-hours.innerHTML = '04';
+hours.innerHTML = '01';
 timer.before(hours); 
 
 hours.after(':')
 
 let min = document.createElement('span');
-min.innerHTML = '11';
+min.innerHTML = '05';
 timer.before(min); 
 
 min.after(':');
@@ -47,7 +47,7 @@ let  countdownMunites= setInterval(() => {
    if (min.textContent.length == 1) {
     min.textContent = `0${min.textContent }`;
    }
-   if (min.textContent == 0 && hours.textContent != 0) {
+   if (min.textContent == -1 && hours.textContent != 0) {
     min.textContent = 59;
    }
     if (min.textContent == 0 && hours.textContent == 0) {
@@ -61,12 +61,14 @@ let countdownSeconds = setInterval(() => {
    if (timer.textContent.length == 1) {
     timer.textContent = `0${timer.textContent }`;
    }
-   if (timer.textContent == 0 && min.textContent != 0) {
+   if (timer.textContent == -1 && min.textContent != 0) {
     timer.textContent = 59;
    }
     if (timer.textContent == 0 && min.textContent == 0 && hours.textContent == 0) {
         alert('Вы победили в конкурсе!');
         clearInterval(countdownSeconds);
+        // location.assign("https://i.ibb.co/WWkkQRV/magic.png");
+        timer.insertAdjacentHTML("afterend", '<img src="https://i.ibb.co/WWkkQRV/magic.png" alt="жираф">');
     }
 }, 1000);
 
