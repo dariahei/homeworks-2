@@ -2,8 +2,6 @@ let reveal = document.querySelectorAll('.reveal');
 console.log(reveal);
 
 reveal.forEach(item => {
-    item.getBoundingClientRect();
-    console.log(item.getBoundingClientRect());
     const viewportHeight = window.innerHeight;
     
 
