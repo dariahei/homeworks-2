@@ -1,10 +1,24 @@
 body {
   font-family: Arial;
 }
+
+.cart {
+  display: none;
+}
+.cart__active {
+  display: block;
+  height: 180px;
+}
+.cart__title {
+  font-size: 30px;
+}
 .cart__products {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  position: fixed;
+  background-color: lightgray;
 }
 
 .cart__product {
@@ -26,6 +40,18 @@ body {
   height: 100px;
   object-fit: contain;
 }
+.cart__product-remove{
+  position: relative;
+  top: -70px;
+  left: 20px;
+  z-index: 1;
+  color: #a32b34;
+  font-size: 37px;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
 .product {
   display: flex;
   flex-wrap: wrap;
